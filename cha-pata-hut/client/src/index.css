@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { -webkit-font-smoothing: antialiased; }
+
+@layer components {
+  .container-page { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md font-medium transition-colors duration-200 text-sm sm:text-base; }
+  .btn-primary { @apply btn bg-primary text-white hover:bg-primary-dark; }
+  .btn-outline { @apply btn border-2 border-white text-white hover:bg-white hover:text-primary; }
+  .btn-secondary { @apply btn bg-secondary text-white hover:bg-primary; }
+  .btn-ghost { @apply btn bg-white text-primary border border-primary hover:bg-primary hover:text-white; }
+  .card { @apply bg-white rounded-2xl shadow-soft overflow-hidden; }
+  .input { @apply w-full rounded-md border border-gray-200 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary; }
+  .label { @apply block text-sm font-medium text-ink mb-1.5; }
+  .badge { @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full; }
+}
+
+/* Tea-leaf decorative SVG background */
+.bg-tea-pattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(46,125,70,0.06) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(217,164,65,0.05) 0, transparent 40%);
+}
+
+/* Subtle paper-grain feel for cream sections */
+.bg-grain {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(31,74,46,0.02) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(31,74,46,0.02) 0 1px, transparent 1px 3px);
+}
+
+/* Hide scrollbar in horizontal scroll strips on mobile */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
