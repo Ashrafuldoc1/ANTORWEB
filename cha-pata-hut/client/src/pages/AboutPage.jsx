@@ -1,9 +1,6 @@
 import Icon from '../components/Icon.jsx';
-import { useSettings } from '../context/SettingsContext.jsx';
 
 export default function AboutPage() {
-  const { settings } = useSettings();
-  const site = settings.site || {};
   return (
     <section className="bg-cream py-14">
       <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
@@ -21,11 +18,11 @@ export default function AboutPage() {
           </p>
           <div className="mt-5 grid grid-cols-2 gap-3">
             {[
-              ['100%', 'Natural leaves', Icon, 'leaf'],
-              ['15+', 'Years experience', Icon, 'award'],
-              ['5000+', 'Happy customers', Icon, 'user'],
-              ['3 day', 'Delivery in BD', Icon, 'truck'],
-            ].map(([num, label, I, n], i) => (
+              ['100%', 'Natural leaves'],
+              ['15+', 'Years experience'],
+              ['5000+', 'Happy customers'],
+              ['3 day', 'Delivery in BD'],
+            ].map(([num, label], i) => (
               <div key={i} className="card p-4">
                 <div className="text-2xl font-display font-bold text-primary">{num}</div>
                 <div className="text-xs text-muted">{label}</div>
